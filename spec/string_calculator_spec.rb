@@ -46,5 +46,12 @@ RSpec.describe StringCalculator do
         expect { subject.add("//|\n1||2") }.to raise_error(ArgumentError, "Invalid input")
       end
     end
+
+    context 'given a string with negative numbers' do
+      it 'raises an ArgumentError with the negative numbers listed' do
+        expect { subject.add('1,-2,3') }.to raise_error(ArgumentError, "Negative numbers not allowed: -2")
+        expect { subject.add("//;\n1;-2;-3") }.to raise_error(ArgumentError, "Negative numbers not allowed: -2, -3")
+      end
+    end
   end
 end

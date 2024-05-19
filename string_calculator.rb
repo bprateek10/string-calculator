@@ -14,9 +14,15 @@ class StringCalculator
       raise ArgumentError, "Invalid input"
     end
 
-    nums = nums.split(/#{delimiter}|,|\n/)
+    nums_array = nums.split(/#{delimiter}|,|\n/)
+    
+    # Check for negative numbers
+    negatives = nums_array.select { |num| num.to_i < 0 }
+    unless negatives.empty?
+      raise ArgumentError, "Negative numbers not allowed: #{negatives.join(', ')}"
+    end
 
-    sum = nums.reduce(0) { |acc, num| acc + num.to_i }
+    sum = nums_array.reduce(0) { |acc, num| acc + num.to_i }
 
     sum
   end
