@@ -11,7 +11,7 @@ This is a simple Ruby class `StringCalculator` that can perform calculations on 
 1. Make sure you have Ruby installed on your system.
 2. Clone this repository:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/bprateek10/string-calculator.git
    cd string-calculator
    ```
 
