@@ -9,9 +9,16 @@ RSpec.describe StringCalculator do
         expect(StringCalculator.new.add('')).to eq(0)
       end
     end
+
     context 'given nil' do
       it 'returns zero' do
         expect(StringCalculator.new.add(nil)).to eq(0)
+      end
+    end
+    
+    context 'given n number' do
+      it 'returns the sum of the numbers' do
+        expect(StringCalculator.new.add('1,2,3,4')).to eq(10)
       end
     end
   end
